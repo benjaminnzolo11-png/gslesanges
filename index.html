@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Complexe Scolaire Les Anges</title>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.CSS">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#accueil">COMPLEXE SCOLAIRE LES ANGES</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#accueil">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" href="#apropos">À propos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#inscription">Inscription</a></li>
+          <li class="nav-item"><a class="nav-link" href="#enseignants">Nos enseignants</a></li>
+          <li class="nav-item"><a class="nav-link" href="#don">Don</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contactez-nous</a></li>
+          <li class="nav-item"><a class="nav-link" href="#galerie">Galerie</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Accueil -->
+  <section id="accueil" class="container mt-5 pt-5">
+    <h1 class="text-center">Bienvenue au Complexe Scolaire Les Anges</h1>
+    <p class="lead text-center">Une école d’excellence à Kinshasa, formant les leaders de demain.</p>
+
+    <!-- Images -->
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <img src="https://images.unsplash.com/photo-1596495577886-d920f1fb7238" alt="École" class="hero-img">
+      </div>
+      <div class="col-md-6">
+        <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df" alt="Étudiants" class="hero-img">
+      </div>
+    </div>
+
+    <!-- Tableau Bootstrap -->
+    <h3 class="mt-5">Nos niveaux scolaires</h3>
+    <table class="table table-striped table-bordered">
+      <thead class="table-dark">
+        <tr>
+          <th>Niveau</th>
+          <th>Classes</th>
+          <th>Options</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Maternelle</td>
+          <td>Petite, Moyenne, Grande section</td>
+          <td>Éveil et jeux éducatifs</td>
+        </tr>
+        <tr>
+          <td>Primaire</td>
+          <td>1ère à 6ème</td>
+          <td>Programme général</td>
+        </tr>
+        <tr>
+          <td>Secondaire</td>
+          <td>1ère à 4ème Humanités</td>
+          <td>Sciences, Latin-Philo, Pédagogie, Social</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <script> // Script pour styliser dynamiquement le tableau de l'accueil
+    const table = document.getElementById("schoolTable");
+    const rows = table.getElementsByTagName("tr");
+
+    // Survol des lignes : changement de couleur
+    for (let i = 1; i < rows.length; i++) {
+      rows[i].addEventListener("mouseover", function () {
+        this.style.backgroundColor = "#d6eaf8";
+        this.style.cursor = "pointer";
+      });
+      rows[i].addEventListener("mouseout", function () {
+        this.style.backgroundColor = "";
+      });
+    }
+
+    // Mise en évidence automatique de la dernière ligne
+    rows[rows.length - 1].classList.add("highlight");
+
+    // Animation d'apparition du tableau
+    table.style.opacity = 0;
+    table.style.transition = "opacity 1.5s ease";
+    window.addEventListener("load", () => {
+      table.style.opacity = 1;
+    });
+  </script>
+
+  <!-- À propos -->
+  <section id="apropos">
+    <div class="container">
+      <h2>À propos de l’école</h2>
+      <p>Le Complexe Scolaire Les Anges est une institution éducative complète, composée de bâtiments modernes,
+        de salles de classe équipées, d’une bibliothèque, de laboratoires scientifiques, d’une salle
+        informatique,
+        d’un terrain de sport et d’espaces de jeux pour les enfants. L’école a été fondée en 2010 par le
+        Directeur BONCOEUR SAFARI,
+        avec la vision de former des élèves disciplinés, compétents et responsables.</p>
+      <p>Les cours sont organisés en matinée et en après-midi, selon les niveaux. Les enseignants sont hautement
+        qualifiés
+        et accompagnent les élèves dans leur parcours académique et social. Les options disponibles au
+        secondaire sont
+        Sciences, Latin-Philo, Pédagogie et Social.</p>
+    </div>
+  </section>
+  <script>
+    // Script pour la page À propos
+    document.addEventListener("DOMContentLoaded", () => {
+      const items = document.querySelectorAll("#apropos ul li");
+
+      // Animation séquentielle des éléments de la liste
+      items.forEach((item, index) => {
+        item.style.opacity = 0;
+        item.style.transform = "translateY(20px)";
+        setTimeout(() => {
+          item.style.transition = "all 0.8s ease";
+          item.style.opacity = 1;
+          item.style.transform = "translateY(0)";
+        }, 300 * index);
+      });
+
+      // Effet interactif sur le titre
+      const title = document.querySelector("#apropos h2");
+      title.addEventListener("mouseover", () => {
+        title.style.color = "#e74c3c";
+        title.style.transform = "scale(1.1)";
+        title.style.transition = "all 0.3s ease";
+      });
+      title.addEventListener("mouseout", () => {
+        title.style.color = "#f1c40f";
+        title.style.transform = "scale(1)";
+      });
+    });
+
+  </script>
+
+  <!-- Inscription -->
+  <section id="inscription" class="container">
+    <h2>Formulaire d’inscription</h2>
+    <form>
+      <div class="mb-3">
+        <label class="form-label">Nom complet</label>
+        <input type="text" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Date de naissance</label>
+        <input type="date" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Adresse</label>
+        <input type="text" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Photo passeport</label>
+        <input type="file" class="form-control" accept="image/*" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Classe</label>
+        <select class="form-select" required>
+          <option>Maternelle</option>
+          <option>Primaire</option>
+          <option>1ère Humanité</option>
+          <option>2ème Humanité</option>
+          <option>3ème Humanité</option>
+          <option>4ème Humanité</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Option</label>
+        <select class="form-select">
+          <option>Sciences</option>
+          <option>Latin-Philo</option>
+          <option>Pédagogie</option>
+          <option>Social</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Bulletin de l’année passée (si classe supérieure)</label>
+        <input type="file" class="form-control">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Nom du père</label>
+        <input type="text" class="form-control" required>
+        <label class="form-label">Numéro du père</label>
+        <input type="tel" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Nom de la mère</label>
+        <input type="text" class="form-control" required>
+        <label class="form-label">Numéro de la mère</label>
+        <input type="tel" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Email de l’élève (si disponible)</label>
+        <input type="email" class="form-control">
+      </div>
+      <button type="submit" class="btn btn-primary">S’inscrire</button>
+
+      <script>
+        // Script pour la page Inscription
+        document.addEventListener("DOMContentLoaded", () => {
+          const form = document.querySelector("#inscription form");
+
+          form.addEventListener("submit", (e) => {
+            e.preventDefault(); // Empêche l'envoi réel pour la démo
+
+            // Vérification simple des champs obligatoires
+            let valid = true;
+            form.querySelectorAll("input[required], select[required]").forEach(field => {
+              if (!field.value) {
+                valid = false;
+                field.style.borderColor = "red";
+                field.style.boxShadow = "0 0 8px rgba(231,76,60,0.8)";
+              } else {
+                field.style.borderColor = "#2980b9";
+                field.style.boxShadow = "0 0 8px rgba(41,128,185,0.5)";
+              }
+            });
+
+            if (valid) {
+              alert("✅ Inscription envoyée avec succès !");
+              form.reset();
+            } else {
+              alert("⚠️ Veuillez remplir tous les champs obligatoires.");
+            }
+          });
+
+          // Animation des champs au focus
+          form.querySelectorAll(".form-control, .form-select").forEach(field => {
+            field.addEventListener("focus", () => {
+              field.style.backgroundColor = "#eaf2f8";
+            });
+            field.addEventListener("blur", () => {
+              field.style.backgroundColor = "white";
+            });
+          });
+        });
+
+      </script>
+      <!-- Enseignants -->
+      <section id="enseignants" class="container">
+        <h2>Nos enseignants</h2>
+        <div class="row">
+          <div class="col-md-3 teacher-card">
+            <div class="card">
+              <img src="DR.SAFARI.jpg" alt="Mr SAFARI">
+              <div class="card-body">
+                <h5 class="card-title">Monsieur Boncoeur SAFARI</h5>
+                <p>Spécialité : Sciences<br> Diplôme : Licence en Biologie-Chimie</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 teacher-card">
+            <div class="card">
+              <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d" class="card-img-top"
+                alt="M. Paul">
+              <div class="card-body">
+                <h5 class="card-title">M. Paul</h5>
+                <p>Spécialité : Latin-Philo<br> Diplôme : Master en Philosophie</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 teacher-card">
+            <div class="card">
+              <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1" class="card-img-top"
+                alt="Mme Chantal">
+              <div class="card-body">
+                <h5 class="card-title">Mme Chantal</h5>
+                <p>Spécialité : Pédagogie<br> Diplôme : Licence en Sciences de l’éducation</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 teacher-card">
+            <div class="card">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2" class="card-img-top" alt="M. David">
+              <div class="card-body">
+                <h5 class="card-title">M. David</h5>
+                <p>Spécialité : Social<br> Diplôme : Master en Sociologie</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <script>
+        // Script pour la page Enseignants
+        document.addEventListener("DOMContentLoaded", () => {
+          const cards = document.querySelectorAll("#enseignants .teacher-card .card");
+
+          // Animation séquentielle des cartes à l'apparition
+          cards.forEach((card, index) => {
+            card.style.opacity = 0;
+            card.style.transform = "translateY(30px)";
+            setTimeout(() => {
+              card.style.transition = "all 0.8s ease";
+              card.style.opacity = 1;
+              card.style.transform = "translateY(0)";
+            }, 300 * index);
+          });
+
+          // Effet clic : afficher une alerte avec infos de l'enseignant
+          cards.forEach(card => {
+            card.addEventListener("click", () => {
+              const name = card.querySelector("h5").innerText;
+              const info = card.querySelector("p").innerText;
+              alert("👩‍🏫 Enseignant : " + name + "\n" + info);
+            });
+          });
+        });
+
+      </script>
+
+      <!-- Don -->
+      <section id="don" class="container">
+        <h2>Faire un don</h2>
+        <form>
+          <div class="mb-3">
+            <label class="form-label">Montant</label>
+            <input type="number" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Mode de paiement</label>
+            <select class="form-select" required>
+              <option>Carte bancaire</option>
+              <option>Cash</option>
+              <option>Airtel Money</option>
+              <option>M-Pesa</option>
+              <option>Orange Money</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-success">Donner</button>
+        </form>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="container">
+        <h2>Contactez-nous</h2>
+        <p><strong>Téléphone :</strong> 0998434584</p>
+        <p><strong>Email :</strong> contact@lesanges.cd</p>
+        <p><strong>Facebook :</strong> facebook.com/lesanges</p>
+        <p><strong>WhatsApp :</strong> +243998434584</p>
+        <p><strong>Adresse :</strong> Ville Kinshasa, Commune Mont-Ngafula, Quartier Kindele, Avenue Kinkole</p>
+        <p><strong>Site web :</strong> www.lesanges.cd</p>
+      </section>
+
+      <script>
+        // Script pour la page Don
+        document.addEventListener("DOMContentLoaded", () => {
+          const form = document.querySelector("#don form");
+
+          form.addEventListener("submit", (e) => {
+            e.preventDefault(); // Empêche l'envoi réel pour la démo
+
+            const montant = form.querySelector("input[type='number']");
+            const mode = form.querySelector("select");
+
+            if (!montant.value || montant.value <= 0) {
+              alert("⚠️ Veuillez entrer un montant valide.");
+              montant.style.borderColor = "red";
+              return;
+            }
+
+            if (!mode.value) {
+              alert("⚠️ Veuillez choisir un mode de paiement.");
+              mode.style.borderColor = "red";
+              return;
+            }
+
+            // Confirmation
+            alert("✅ Merci pour votre don de " + montant.value + " via " + mode.value + " !");
+            form.reset();
+          });
+
+          // Animation des champs au focus
+          form.querySelectorAll(".form-control, .form-select").forEach(field => {
+            field.addEventListener("focus", () => {
+              field.style.backgroundColor = "#fdecea";
+            });
+            field.addEventListener("blur", () => {
+              field.style.backgroundColor = "white";
+            });
+          });
+        });
+
+      </script>
+
+      <!-- Galerie -->
+      <section id="galerie" class="container">
+        <h2>Galerie & Activités</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <img src="https://images.unsplash.com/photo-1588072432836-e10032774350" class="img-fluid rounded mb-3"
+              alt="Classe">
+          </div>
+          <div class="col-md-4">
+            <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c" class="img-fluid rounded mb-3"
+              alt="Bibliothèque">
+          </div>
+        </div>
+      </section>
+
+      <script>
+        // Script pour la page Galerie
+        document.addEventListener("DOMContentLoaded", () => {
+          const images = document.querySelectorAll("#galerie .gallery-img");
+
+          // Animation séquentielle des images à l'apparition
+          images.forEach((img, index) => {
+            img.style.opacity = 0;
+            img.style.transform = "translateY(30px)";
+            setTimeout(() => {
+              img.style.transition = "all 0.8s ease";
+              img.style.opacity = 1;
+              img.style.transform = "translateY(0)";
+            }, 300 * index);
+          });
+
+          // Effet clic : agrandir l'image dans une fenêtre modale
+          images.forEach(img => {
+            img.addEventListener("click", () => {
+              const modal = document.createElement("div");
+              modal.style.position = "fixed";
+              modal.style.top = 0;
+              modal.style.left = 0;
+              modal.style.width = "100%";
+              modal.style.height = "100%";
+              modal.style.background = "rgba(0,0,0,0.8)";
+              modal.style.display = "flex";
+              modal.style.alignItems = "center";
+              modal.style.justifyContent = "center";
+              modal.style.zIndex = 9999;
+
+              const bigImg = document.createElement("img");
+              bigImg.src = img.src;
+              bigImg.style.maxWidth = "90%";
+              bigImg.style.maxHeight = "90%";
+              bigImg.style.borderRadius = "10px";
+              bigImg.style.boxShadow = "0 6px 20px rgba(0,0,0,0.5)";
+
+              modal.appendChild(bigImg);
+              document.body.appendChild(modal);
+
+              // Fermer la modale au clic
+              modal.addEventListener("click", () => {
+                document.body.removeChild(modal);
+              });
+            });
+          });
+        });
+
+      </script>
+
+      <!-- Footer -->
+      <footer>
+        <p>&copy; 2026 Complexe Scolaire Les Anges - Kinshasa</p>
+      </footer>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+      <script>
+        // Script pour le footer
+        document.addEventListener("DOMContentLoaded", () => {
+          const footer = document.querySelector("footer");
+
+          // Animation d'apparition du footer
+          footer.style.opacity = 0;
+          footer.style.transition = "opacity 1.5s ease";
+          window.addEventListener("load", () => {
+            footer.style.opacity = 1;
+          });
+
+          // Effet interactif sur les icônes sociales
+          const icons = footer.querySelectorAll(".social-icons i");
+          icons.forEach(icon => {
+            icon.addEventListener("click", () => {
+              alert("🔗 Vous avez cliqué sur l'icône : " + icon.className);
+            });
+          });
+        });
+
+      </script>
+
+</body>
+
+</html>
